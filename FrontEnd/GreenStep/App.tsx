@@ -30,28 +30,28 @@ const BottomTabScreen = () => {
           height: 70,
         },
         tabBarIcon(props) {
-          if (route.name === 'Competition') {
+          if (route.name === '경쟁') {
             return <Image source={competition} style={ImageStyle.tinyImage} />;
           }
-          else if(route.name === 'board'){
+          else if(route.name === '크루 찾기'){
             return <Image source={board} style={ImageStyle.tinyImage} />;
           }
-          else if(route.name === 'Home'){
+          else if(route.name === '메인 페이지'){
             return <Image source={home} style={ImageStyle.tinyImage} />;
           }
-          else if(route.name === 'DataMap'){
+          else if(route.name === '데이터 지도'){
             return <Image source={dataMap} style={ImageStyle.tinyImage}/>;
           }
-          else if(route.name === 'Profile'){
+          else if(route.name === '마이 페이지'){
             return <Image source={profile} style={ImageStyle.tinyImage} />;
           }
         },
       })}>
-      <Tab.Screen name="Competition" component={Competition} />
-      <Tab.Screen name="board" component={Board} />
-      <Tab.Screen name="Home" component={Main}/>
-      <Tab.Screen name="DataMap" component={DataMap} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="경쟁" component={Competition} />
+      <Tab.Screen name="크루 찾기" component={Board} />
+      <Tab.Screen name="메인 페이지" component={Main}/>
+      <Tab.Screen name="데이터 지도" component={DataMap} />
+      <Tab.Screen name="마이 페이지" component={Profile} />
     </Tab.Navigator>
   );
 };
