@@ -10,6 +10,13 @@ import PloggingStart from './src/Page/PloggingStart';
 import PloggingFinish from './src/Page/PloggingFinish';
 import Profile from './src/Page/Profile';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
+import ImageStyle from './src/Style/Image';
+import home from '../GreenStep/src/Image/Footer/home.png'
+import profile from '../GreenStep/src/Image/Footer/profile.png'
+import competition from '../GreenStep/src/Image/Footer/competition.png'
+import dataMap from '../GreenStep/src/Image/Footer/dataMap.png'
+import board from '../GreenStep/src/Image/Footer/board.png'
 
 const BottomTabScreen = () => {
   const Tab = createBottomTabNavigator();
@@ -22,12 +29,29 @@ const BottomTabScreen = () => {
         tabBarStyle: {
           height: 70,
         },
+        tabBarIcon(props) {
+          if (route.name === 'Competition') {
+            return <Image source={competition} style={ImageStyle.tinyImage} />;
+          }
+          else if(route.name === 'board'){
+            return <Image source={board} style={ImageStyle.tinyImage} />;
+          }
+          else if(route.name === 'Home'){
+            return <Image source={home} style={ImageStyle.tinyImage} />;
+          }
+          else if(route.name === 'DataMap'){
+            return <Image source={dataMap} style={ImageStyle.tinyImage}/>;
+          }
+          else if(route.name === 'Profile'){
+            return <Image source={profile} style={ImageStyle.tinyImage} />;
+          }
+        },
       })}>
-      <Tab.Screen name="main" component={Main} />
-      <Tab.Screen name="achievement" component={Achievement} />
+      <Tab.Screen name="Competition" component={Competition} />
       <Tab.Screen name="board" component={Board} />
-      <Tab.Screen name="competition" component={Competition} />
-      <Tab.Screen name="profile" component={Profile} />
+      <Tab.Screen name="Home" component={Main}/>
+      <Tab.Screen name="DataMap" component={DataMap} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
