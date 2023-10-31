@@ -22,7 +22,7 @@ export default CustomButton;
 
 // 사용예시 - 타 페이지
 
-// import CustomButton from '../Component/Common/CommonButton';
+// import CustomButton from '../Component/Common/CustomButton';
 
 //     <View>
 //       <CustomButton title='시간' styleType='smallButton' backgroundColor='#1EFF00' color='#5BB450' fontSize={24}></CustomButton>
