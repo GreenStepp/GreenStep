@@ -1,13 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, Text} from 'react-native';
-import ButtonStyle from '../../Style/Button';
+import ButtonStyle from '../../Style/ButtonStyle';
 
 interface CustomButtonType {
     title: string;
     styleType: keyof typeof ButtonStyle;
-    backgroundColor: string;
-    color: string;
-    fontSize: number;
+    backgroundColor?: string;
+    color?: string;
+    fontSize?: number;
 }
 
 const CustomButton = ({ title, styleType, backgroundColor, color, fontSize }: CustomButtonType) => {
@@ -22,7 +22,7 @@ export default CustomButton;
 
 // 사용예시 - 타 페이지
 
-// import CustomButton from '../Component/Common/Button';
+// import CustomButton from '../Component/Common/CommonButton';
 
 //     <View>
 //       <CustomButton title='시간' styleType='smallButton' backgroundColor='#1EFF00' color='#5BB450' fontSize={24}></CustomButton>
