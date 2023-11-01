@@ -19,13 +19,11 @@ const Board = () => {
   return (
     <View style={{flex:1}}>
       <ScrollView style={{ flex: 1 }}>
-        <View style={{alignItems:'center', justifyContent:'center', margin: 10}}>
+        <View style={{alignItems:'center', justifyContent:'center', margin: 20}}>
           <Text style={{fontSize: 22, fontWeight:'bold'}}>크루 찾기</Text>
         </View>
-        <Text></Text>
-        <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 20 }}>내 글</Text>
-        <Text></Text>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 20, marginBottom: 20}}>내 글</Text>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{marginBottom: 30}}>
               {myList.map((list, index) =>(
                 <View style={[Box.mediumCardBox, {marginLeft: 10}]}>
                     <Text style={{fontSize:16, fontWeight:'bold', marginBottom: 10}} numberOfLines={1} ellipsizeMode="tail">{list.title}</Text>
@@ -34,25 +32,21 @@ const Board = () => {
                   </View>
               ))}
             </ScrollView>
-        <Text></Text>
-        <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 20 }}>최신</Text>
-        <Text></Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 20, marginBottom: 20}}>최신</Text>
+        
           <ScrollView >
                 {boardList.map((list, index) =>(
-                  <View style={{alignItems:'center'}}>
+                  <View style={{alignItems:'center', marginBottom: 20}}>
                     <View style={[Box.cardBox,{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems:'center'}]}>
                       <View>
-                        <Text style={{fontWeight:'bold', fontSize: 20}}>{list.title}</Text>
-                        <Text></Text>
-                        <Text>인원 {list.member}</Text>
-                        <Text></Text>
-                        <Text>날짜 {list.date}</Text> 
+                        <Text style={{fontWeight:'bold', fontSize: 20, marginBottom: 20}}>{list.title}</Text>
+                        <Text style={{marginBottom: 20}}>인원 {list.member}</Text>
+                        <Text style={{marginBottom: 20}}>날짜 {list.date}</Text> 
                       </View>
                       <View>
                         <Image source={character} style={ImageStyle.mediumImage}></Image>
                       </View>
                     </View>
-                    <Text></Text>
                   </View>
                 ))}
           </ScrollView>
@@ -60,10 +54,11 @@ const Board = () => {
 
         <TouchableOpacity style={[ButtonStyle.smallButton,ButtonStyle.achievementButton,
                                  {position:'absolute', bottom: 20, alignSelf: 'center',
-                                  display:'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems:'center'
+                                  display:'flex', flexDirection: 'row', 
+                                  justifyContent: 'space-evenly', alignItems:'center'
                                  }]}>
-          <Image source={pencil} style={{width:15, height: 15}}></Image>
-          <Text style={{fontSize:16, color:'white', fontWeight:'bold'}}>글 쓰기</Text>
+            <Image source={pencil} style={{width:15, height: 15}}></Image>
+            <Text style={{fontSize:16, color:'white', fontWeight:'bold'}}>글 쓰기</Text>
         </TouchableOpacity>
     </View>
   );
