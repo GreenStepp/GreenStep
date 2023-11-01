@@ -33,7 +33,7 @@ const Achievement = () => {
 
   return (
     <ScrollView>
-      <Text>Achievement</Text>
+      <Text></Text>
       <View style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
         {list.map((atom, idx) => (
           <TouchableOpacity style={[ButtonStyle.smallButton, ButtonStyle.achievementButton]} onPress={changeNumber(idx)} >
