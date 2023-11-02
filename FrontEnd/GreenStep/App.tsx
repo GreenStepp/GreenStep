@@ -13,7 +13,7 @@ import Main from './src/Page/Main';
 import PloggingStart from './src/Page/PloggingStart';
 import PloggingFinish from './src/Page/PloggingFinish';
 import Profile from './src/Page/Profile';
-import BoardDetail from './src/Component/Board/BoardDetail';
+import BoardDetail from './src/Page/BoardDetail';
 //style
 import ImageStyle from './src/Style/Image';
 //Image
