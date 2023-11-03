@@ -15,7 +15,8 @@ const Profile = ({navigation}:any) => {
       
       <ProfileHeader/>      
       
-      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems:'center'}}>
+      <View style={{display: 'flex', flexDirection: 'row', marginBottom: 20,
+                    justifyContent: 'space-evenly', alignItems:'center'}}>
         <View style={{alignItems:'center'}}>
           <ProfileHeaderImage/>
           <ProfileHeaderMessage/>
