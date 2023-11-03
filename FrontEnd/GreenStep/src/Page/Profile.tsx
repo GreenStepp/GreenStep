@@ -1,5 +1,5 @@
 import {View, ScrollView} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 //components
 import ProfileHeader from '../Component/Profile/ProfileHeader';
 import ProfileHeaderImage from '../Component/Profile/ProfileHeaderImage';
@@ -10,6 +10,7 @@ import AchievementHeader from '../Component/Profile/Achievement/AchievementHeade
 import AchievementList from '../Component/Profile/Achievement/AchievementList';
 
 const Profile = ({navigation}:any) => {
+
   return (
     <ScrollView>
       
