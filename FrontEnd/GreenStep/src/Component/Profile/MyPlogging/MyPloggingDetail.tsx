@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Modal, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from "react-native";
+import { View, Modal, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import ImageStyle from '../../../Style/Image';
 import avatar from '../../../Image/Avatar/bird.png';
 
@@ -62,15 +62,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 20,
         padding: 20,
-        // alignItems: 'center',
-        // shadowColor: '#000',
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 2
-        // },
-        // shadowOpacity: 0.25,
-        // shadowRadius: 4,
-        // elevation: 2
     },
     noWrapRow: {
         flexDirection: 'row',

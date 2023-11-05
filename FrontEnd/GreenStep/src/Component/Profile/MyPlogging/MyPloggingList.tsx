@@ -46,15 +46,15 @@ const styles = StyleSheet.create({
     },
     overlayText: {
         position: 'absolute',
-        bottom: 0, // 위치를 조정하세요
+        bottom: 0,
         left: 0,
         right: 0,
-        // backgroundColor: 'rgba(0, 0, 0, 0.5)', // 텍스트 배경 투명도 조정
+        // backgroundColor: 'rgba(0, 0, 0, 0.5)',
         padding: 5,
     },
     textStyle: {
-        color: 'black', // 텍스트 색상은 적절하게 조정하세요
-        textAlign: 'center', // 텍스트 정렬 방식 조정
+        color: 'black',
+        textAlign: 'center',
         fontSize: 10
     },
 });
