@@ -14,7 +14,7 @@ export const ProfileAPI = {
         url: '/mypage',
       });
     },
-    /** 마이페이지 플로깅 내역 조회(시간, 거리, 쓰레기) */
+    /** 마이페이지 플로깅 내역 조회(시간, 거리, 쓰레기, 달성 업적) */
     getMyPloggingAxios: function () {
       return axiosInstance.request({
         method: "GET",
