@@ -11,7 +11,7 @@ export const AchievementAPI = {
     getAchievementAxios: function (achieveType : number) {
       return axiosInstance.request({
         method: "GET",
-        url: `/${achieveType}`,
+        url: `/achieve/${achieveType}`,
       });
     },
   }
