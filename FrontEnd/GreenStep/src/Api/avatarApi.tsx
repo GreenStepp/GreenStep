@@ -1,4 +1,5 @@
 import axios from "axios";
+import tokenHttp from "./tokenHttp";
 
 //기본 axios 인스턴스 생성
 const axiosInstance = axios.create({
@@ -9,14 +10,14 @@ const axiosInstance = axios.create({
 export const AvatarAPI = {
     /** 마이페이지 캐릭터 조회*/
     getAvatarAxios: function () {
-      return axiosInstance.request({
+      return tokenHttp.request({
         method: "GET",
         url: '/avatar',
       });
     },
     /** 캐릭터 선택 */
     patchAvatarAxios: function (boxId: number) {
-      return axiosInstance.request({
+      return tokenHttp.request({
         method: "PATCH",
         url: `/${boxId}/avatar`,
       });
