@@ -10,19 +10,25 @@ import { AvatarAPI } from "../../Api/avatarApi";
 
 interface ModalProps {
     onClose: () => void;
-    onSelectAvatar: (avatar: any) => void;
+    onSelectAvatar: (boxId:number) => void;
     visible: boolean;
+}
+interface AvatarProps{
+    avatarId : number;
+    boxId : number;
+    avatarImg: string;
+    avatarName: string
 }
 
 const ProfileAvatarModal : React.FC<ModalProps> = ({ onSelectAvatar, onClose}) => {
     const [collection, setCollection] = useState([panda, cow, bird, crocodile])
-    const [avatars, setAvatars] = useState({})
+    const [avatars, setAvatars] = useState<AvatarProps[]>([]);
     // 사용자 캐릭터 불러오기
     const getAvatarInfo = () => {
     AvatarAPI.getAvatarAxios()
     .then((res) =>{
       console.log(res)
-    //   setAvatars(res.data)
+      setAvatars(res.data)
     } 
       )
     .catch(err => console.log('사용자 캐릭터 조회 axios 에러 : ', err))
@@ -45,9 +51,9 @@ const ProfileAvatarModal : React.FC<ModalProps> = ({ onSelectAvatar, onClose}) =
                 <View style={[styles.modalView, {justifyContent:'center', alignItems:'center'}]}>
                     <Text style={{marginBottom: 10, fontWeight:'bold', fontSize: 20}}> 캐릭터 선택</Text>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        {collection.map((char, idx) => (
-                            <TouchableOpacity onPress={() => onSelectAvatar(char)}>
-                                <Image source={char} style={ImageStyle.AvatarImage}></Image>
+                        {avatars?.map((char, idx) => (
+                            <TouchableOpacity onPress={() => onSelectAvatar(char.avatarId)}>
+                                <Image source={{uri:char.avatarImg}} style={[ImageStyle.AvatarImage,{marginLeft: 5}]}></Image>
                             </TouchableOpacity>
                         ))}
                     </ScrollView>

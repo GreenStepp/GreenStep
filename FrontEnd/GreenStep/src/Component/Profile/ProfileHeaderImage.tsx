@@ -9,29 +9,28 @@ import { AvatarAPI } from "../../Api/avatarApi";
 const ProfileHeaderImage = ({percentage}:any) => {
     const [showAvatar, setShowAvatar] = useState(avatar)
     const [toggle, setToggle] = useState(false)
-    const [boxId, setBoxId] = useState(0)
+    const [avatarId, setavatarId] = useState(1)
 
     // 사용자 캐릭터 변경하기
-    const changeAvatar = (avatar:any) =>{
-        handelBoxId(boxId)
-        AvatarAPI.patchAvatarAxios(boxId)
+    const changeAvatar = (avatarId : number) =>{
+        handelAvatarId(avatarId)
+        AvatarAPI.patchAvatarAxios(avatarId)
         .then((res) =>{
-        //  console.log(res)
-        //  console.log(boxId)
-        setShowAvatar(avatar)
+         console.log(res)
+        // setShowAvatar(res.data)
         handleToggle();
         } 
       )
-    .catch(err => console.log('사용자 캐릭터 변경 axios 에러 : ', err))
+    .catch(err => console.log('사용자 캐릭터 변경 axios 에러 : ', err, avatarId))
 
     }
     const handleToggle = () => {
         setToggle(!toggle)
     }
-    const handelBoxId = (boxId :number) =>{
-        setBoxId(boxId+1)
+    const handelAvatarId = (avatarId :number) =>{
+        setavatarId(avatarId)
     }
-    console.log('exp',percentage)
+    // console.log('exp',percentage)
     return(
         <View>
           <AnimatedCircularProgress
