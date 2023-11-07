@@ -12,14 +12,14 @@ import tokenHttp from '../Api/tokenHttp';
 
 const Profile = ({navigation}:any) => {
   const [name, SetName] = useState('User')
-  const [percentage, setPerCentage] = useState(66);
+  const [percentage, setPerCentage] = useState(0);
   const [level, setLevel] = useState(0);
 
   // 사용자 정보(이름, 경험치, 레벨) 불러오기
   const getUserInfo = () => {
     tokenHttp.get('/mypage')
     .then((res) =>{
-      console.log(res)
+      console.log('사용자 정보1', res)
       SetName(res.data.nickname)
       setPerCentage(res.data.exp)
       setLevel(res.data.level)
