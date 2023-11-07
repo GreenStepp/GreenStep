@@ -19,7 +19,7 @@ const Profile = ({navigation}:any) => {
   const getUserInfo = () => {
     tokenHttp.get('/mypage')
     .then((res) =>{
-      console.log('사용자 정보1', res)
+      console.log(res)
       SetName(res.data.nickname)
       setPerCentage(res.data.exp)
       setLevel(res.data.level)
