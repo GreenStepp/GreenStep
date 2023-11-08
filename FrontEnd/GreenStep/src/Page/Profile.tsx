@@ -11,7 +11,7 @@ import MyPlogging from './MyPlogging';
 import { ProfileAPI } from '../Api/profileApi';
 
 const Profile = ({navigation}:any) => {
-  const [name, SetName] = useState('User')
+  const [name, setName] = useState('User')
   const [percentage, setPerCentage] = useState(0);
   const [level, setLevel] = useState(0);
   const [timeInfo, setTimeInfo] = useState(0)
@@ -23,7 +23,7 @@ const Profile = ({navigation}:any) => {
     try{
       const res = await ProfileAPI.getHeaderAxios();
       console.log(res)
-        SetName(res.data.nickname)
+        setName(res.data.nickname)
         setPerCentage(res.data.exp)
         setLevel(res.data.level)  
     } catch(err){
