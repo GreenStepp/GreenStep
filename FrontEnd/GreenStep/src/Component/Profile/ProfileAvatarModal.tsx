@@ -1,43 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Modal, Text, TouchableWithoutFeedback,
          TouchableOpacity, StyleSheet, ScrollView, Image } from "react-native";
-import panda from '../../Image/Avatar/panda.png'
-import cow from '../../Image/Avatar/cow.png'
-import crocodile from '../../Image/Avatar/crocodile.png'
-import bird from '../../Image/Avatar/bird.png'
 import ImageStyle from '../../Style/Image';
-import { AvatarAPI } from "../../Api/avatarApi";
 
 interface ModalProps {
     onClose: () => void;
     onSelectAvatar: (boxId:number) => void;
+    avatars : AvatarProps[];
     visible: boolean;
 }
-interface AvatarProps{
-    avatarId : number;
-    boxId : number;
+interface AvatarProps {
+    avatarId: number;
+    boxId: number;
     avatarImg: string;
-    avatarName: string
+    avatarName: string;
+    isSelected: boolean;
 }
 
-const ProfileAvatarModal : React.FC<ModalProps> = ({ onSelectAvatar, onClose}) => {
-    const [collection, setCollection] = useState([panda, cow, bird, crocodile])
-    const [avatars, setAvatars] = useState<AvatarProps[]>([]);
-    // 사용자 캐릭터 불러오기
-    const getAvatarInfo = () => {
-    AvatarAPI.getAvatarAxios()
-    .then((res) =>{
-      console.log(res)
-      setAvatars(res.data)
-    } 
-      )
-    .catch(err => console.log('사용자 캐릭터 조회 axios 에러 : ', err))
-  }
-
-  useEffect(() => {
-      getAvatarInfo();
-    }, [])
-
+const ProfileAvatarModal : React.FC<ModalProps> = ({ onSelectAvatar, onClose, avatars}) => {
 
     return (
         <Modal
@@ -52,7 +32,7 @@ const ProfileAvatarModal : React.FC<ModalProps> = ({ onSelectAvatar, onClose}) =
                     <Text style={{marginBottom: 10, fontWeight:'bold', fontSize: 20}}> 캐릭터 선택</Text>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         {avatars?.map((char, idx) => (
-                            <TouchableOpacity onPress={() => onSelectAvatar(char.avatarId)}>
+                            <TouchableOpacity key={idx} onPress={() => onSelectAvatar(char.avatarId)}>
                                 <Image source={{uri:char.avatarImg}} style={[ImageStyle.AvatarImage,{marginLeft: 5}]}></Image>
                             </TouchableOpacity>
                         ))}
