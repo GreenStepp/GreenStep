@@ -27,7 +27,7 @@ const Menu = () => {
     }
     return(
         <View>
-            <Text style={{fontSize:30, paddingLeft: 20, marginBottom: 50}}> 메뉴 </Text>
+            <Text style={{marginBottom: 50}}></Text>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 {names.map((name, idx) =>(
                     <TouchableOpacity key={idx} onPress={()=> moveToCategory(idx)}
