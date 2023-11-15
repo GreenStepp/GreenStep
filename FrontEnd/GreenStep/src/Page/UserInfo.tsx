@@ -108,7 +108,7 @@ const UserInfo = () => {
 
     return(
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
-            <View style={[Box.cardBox, {display:'flex', flexDirection:'row', justifyContent:'space-between', marginVertical: 20}]}>
+            <View style={[Box.cardBox, Box.flexRowBox,{justifyContent:'space-between', marginVertical: 20}]}>
                 <Text style={{fontSize:28}}>닉네임 : {name}</Text>
                 <TouchableOpacity style={{alignItems:'center', justifyContent:'center'}} onPress={handleToggle}>
                     <Text style={{fontSize:20}}>변경하기</Text>

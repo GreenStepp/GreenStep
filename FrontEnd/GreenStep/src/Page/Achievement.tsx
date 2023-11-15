@@ -2,11 +2,12 @@ import {View, Text, ScrollView} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AchievementButton from '../Component/Achievement/AchievementButton';
 import AchievementList from '../Component/Achievement/AcievementList';
-import { AchievementAPI } from '../Api/achievementAPi';
 import { useIsFocused } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { baseURL } from '../Api/tokenHttp';
+import Box from '../Style/Box';
+
 interface achieveProps{
   achieveName : string;
   achievePloggingCount: number | null;
@@ -61,7 +62,7 @@ const Achievement = () => {
 
   return (
     <ScrollView>
-      <View style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly', marginTop:20}}>
+      <View style={[Box.flexRowBox, {justifyContent:'space-evenly', marginTop:20}]}>
         {Type.map((atom, idx) => (
           <AchievementButton key={idx} atom={atom} onPress={changeAchieveType(idx)} />
     ))}
