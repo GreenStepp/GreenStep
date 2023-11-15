@@ -58,6 +58,11 @@ const Box = StyleSheet.create({
       borderRadius: 2,
       marginRight: 4,
     },
+    /** flexRow 박스 */
+    flexRowBox: {
+      display:'flex',
+      flexDirection:'row',
+    },
 })
 
 export default Box;
